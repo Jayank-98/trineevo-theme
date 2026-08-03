@@ -1,0 +1,82 @@
+.o_list_view .o_list_renderer {
+    margin: 12px;
+    border: 1px solid var(--te-border);
+    border-radius: var(--te-radius-lg);
+    background: var(--te-surface);
+    box-shadow: var(--te-shadow-sm);
+}
+
+.o_list_renderer .o_list_table {
+    --table-bg: var(--te-surface);
+    --table-striped-bg: var(--te-surface-soft);
+    border-color: var(--te-border);
+}
+
+.o_list_renderer .o_list_table thead th {
+    padding-top: var(--te-row-y);
+    padding-bottom: var(--te-row-y);
+    border-bottom: 1px solid var(--te-border);
+    background: var(--te-surface-soft);
+    color: var(--te-text);
+    font-weight: 700;
+}
+
+.o_list_renderer .o_list_table tbody > tr > td,
+.o_list_renderer .o_list_table tbody > tr > th {
+    padding-top: var(--te-row-y);
+    padding-bottom: var(--te-row-y);
+    border-color: var(--te-border);
+    color: var(--te-text);
+}
+
+.o_list_renderer .o_list_table tbody > tr.o_data_row {
+    transition: background-color var(--te-transition);
+}
+
+.o_list_renderer .o_list_table tbody > tr.o_data_row:hover > td,
+.o_list_renderer .o_list_table tbody > tr.o_data_row:hover > th {
+    background: rgba(var(--te-primary-rgb), 0.05);
+}
+
+.o_list_renderer .o_list_table tbody > tr.o_data_row.table-active > td,
+.o_list_renderer .o_list_table tbody > tr.o_data_row.table-active > th,
+.o_list_renderer .o_list_table tbody > tr.o_data_row.o_selected_row > td,
+.o_list_renderer .o_list_table tbody > tr.o_data_row.o_selected_row > th {
+    background: var(--te-primary-soft);
+}
+
+.o_list_renderer .o_list_table .o_list_record_selector {
+    vertical-align: middle;
+}
+
+.o_list_renderer .o_list_table .o_handle_cell {
+    color: var(--te-muted);
+}
+
+.o_list_renderer .o_list_table tfoot,
+.o_list_renderer .o_list_table tfoot tr,
+.o_list_renderer .o_list_table tfoot td {
+    background: var(--te-surface-soft);
+    color: var(--te-text);
+    font-weight: 700;
+}
+
+.o_list_renderer .o_group_header {
+    background: var(--te-surface-soft);
+    color: var(--te-text);
+}
+
+.o_list_renderer .o_group_header:hover {
+    background: var(--te-primary-soft);
+}
+
+.o_list_renderer .o_list_table .o_field_widget .o_input {
+    min-height: 32px;
+}
+
+.o_form_view .o_field_x2many .o_list_renderer {
+    border: 1px solid var(--te-border);
+    border-radius: var(--te-radius-md);
+    background: var(--te-surface);
+}
+

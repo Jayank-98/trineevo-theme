@@ -1,0 +1,77 @@
+:root {
+    --te-primary: #7547d8;
+    --te-primary-hover: #6237c3;
+    --te-primary-soft: #f3edff;
+    --te-primary-rgb: 117, 71, 216;
+    --te-bg: #f8f9fd;
+    --te-surface: #ffffff;
+    --te-surface-soft: #fafafa;
+    --te-border: #e5e7eb;
+    --te-border-strong: #d1d5db;
+    --te-text: #111827;
+    --te-heading: #0f172a;
+    --te-label: #475569;
+    --te-muted: #6b7280;
+    --te-muted-soft: #94a3b8;
+    --te-navbar-bg: rgba(255, 255, 255, 0.94);
+    --te-navbar-text: #334155;
+    --te-navbar-text-strong: #111827;
+    --te-success: #16a34a;
+    --te-warning: #f59e0b;
+    --te-danger: #dc2626;
+    --te-info: #2563eb;
+
+    --te-radius-sm: 6px;
+    --te-radius-md: 10px;
+    --te-radius-lg: 14px;
+    --te-radius-xl: 18px;
+
+    --te-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+    --te-shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --te-shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.10);
+
+    --te-transition: 160ms ease;
+    --te-sidebar-width: 236px;
+    --te-sidebar-collapsed-width: 72px;
+    --te-header-height: 64px;
+
+    --te-control-y: 10px;
+    --te-field-y: 8px;
+    --te-row-y: 10px;
+    --te-density-gap: 12px;
+}
+
+html[data-te-theme="dark"] {
+    color-scheme: dark;
+    --te-bg: #0f172a;
+    --te-surface: #111827;
+    --te-surface-soft: #1f2937;
+    --te-border: #374151;
+    --te-border-strong: #4b5563;
+    --te-text: #f9fafb;
+    --te-heading: #ffffff;
+    --te-label: #e2e8f0;
+    --te-muted: #cbd5e1;
+    --te-muted-soft: #94a3b8;
+    --te-navbar-bg: rgba(17, 24, 39, 0.94);
+    --te-navbar-text: #dbe4f0;
+    --te-navbar-text-strong: #ffffff;
+    --te-primary-soft: rgba(111, 66, 193, 0.22);
+    --te-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.24);
+    --te-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
+    --te-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.34);
+}
+
+html[data-te-density="compact"] {
+    --te-control-y: 7px;
+    --te-field-y: 6px;
+    --te-row-y: 7px;
+    --te-density-gap: 8px;
+}
+
+html[data-te-density="comfortable"] {
+    --te-control-y: 10px;
+    --te-field-y: 8px;
+    --te-row-y: 10px;
+    --te-density-gap: 12px;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TrineEvo Backend Theme</title>
+    <style>
+        :root {
+            --te-primary: #6f42c1;
+            --te-bg: #f7f8fb;
+            --te-surface: #ffffff;
+            --te-border: #e5e7eb;
+            --te-text: #111827;
+            --te-muted: #6b7280;
+        }
+        body {
+            margin: 0;
+            background: var(--te-bg);
+            color: var(--te-text);
+            font-family: Inter, Arial, sans-serif;
+            line-height: 1.55;
+        }
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        .panel {
+            background: var(--te-surface);
+            border: 1px solid var(--te-border);
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            padding: 32px;
+        }
+        h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
+        h2 {
+            margin-top: 28px;
+            font-size: 20px;
+        }
+        p {
+            color: var(--te-muted);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        .badge {
+            display: inline-block;
+            border-radius: 999px;
+            background: rgba(111, 66, 193, 0.1);
+            color: var(--te-primary);
+            font-weight: 700;
+            padding: 6px 12px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="panel">
+            <span class="badge">Odoo 19.0 Community</span>
+            <h1>TrineEvo Backend Theme</h1>
+            <p>
+                A modern responsive backend UI theme for the standard Odoo web client.
+                The module improves presentation only and keeps Odoo features, security,
+                workflows, models, actions, menus, and business data unchanged.
+            </p>
+            <h2>Highlights</h2>
+            <ul>
+                <li>Clean app launcher, navigation, control panel, forms, lists, kanban, pivot, graph, and dialog styling.</li>
+                <li>Accessible focus states, responsive spacing, and browser-only theme density preferences.</li>
+                <li>No external dependencies, dashboards, controllers, models, security files, or app-specific assumptions.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

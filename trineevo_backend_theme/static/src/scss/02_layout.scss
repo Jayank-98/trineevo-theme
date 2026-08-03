@@ -1,0 +1,76 @@
+.o_web_client .o_action_manager {
+    background: var(--te-bg);
+    transition: margin-left var(--te-transition), width var(--te-transition);
+}
+
+.o_web_client .o_renderer {
+    color: var(--te-text);
+}
+
+.o_web_client .o_view_controller {
+    background: var(--te-bg);
+}
+
+.o_web_client .o_content {
+    scrollbar-color: var(--te-border-strong) transparent;
+    scrollbar-width: thin;
+}
+
+.o_web_client .o_content::-webkit-scrollbar,
+.o_web_client .o_renderer::-webkit-scrollbar,
+.o_web_client .table-responsive::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.o_web_client .o_content::-webkit-scrollbar-thumb,
+.o_web_client .o_renderer::-webkit-scrollbar-thumb,
+.o_web_client .table-responsive::-webkit-scrollbar-thumb {
+    background: var(--te-border-strong);
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+}
+
+.o_web_client .table-responsive {
+    border-radius: var(--te-radius-lg);
+}
+
+.o_web_client .o_view_sample_data {
+    background: var(--te-bg);
+}
+
+.o_web_client .o_cp_action_menus,
+.o_web_client .o_control_panel_actions {
+    min-width: 0;
+}
+
+.o_web_client .o_action_manager .o_content > .o_view_controller {
+    min-width: 0;
+}
+
+html.o_te_has_sidebar .o_web_client .o_main_navbar,
+html.o_te_has_sidebar .o_web_client .o_action_manager {
+    margin-left: var(--te-sidebar-width);
+    width: calc(100% - var(--te-sidebar-width));
+}
+
+html.o_te_has_sidebar.o_te_sidebar_collapsed .o_web_client .o_main_navbar,
+html.o_te_has_sidebar.o_te_sidebar_collapsed .o_web_client .o_action_manager {
+    margin-left: var(--te-sidebar-collapsed-width);
+    width: calc(100% - var(--te-sidebar-collapsed-width));
+}
+
+html.o_te_has_sidebar .o_web_client .o_main_navbar {
+    transition: margin-left var(--te-transition), width var(--te-transition);
+}
+
+@media (max-width: 992px) {
+    html.o_te_has_sidebar .o_web_client .o_main_navbar,
+    html.o_te_has_sidebar .o_web_client .o_action_manager,
+    html.o_te_has_sidebar.o_te_sidebar_collapsed .o_web_client .o_main_navbar,
+    html.o_te_has_sidebar.o_te_sidebar_collapsed .o_web_client .o_action_manager {
+        margin-left: 0;
+        width: 100%;
+    }
+}

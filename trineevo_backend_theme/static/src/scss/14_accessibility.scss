@@ -1,0 +1,62 @@
+.o_web_client button:focus-visible,
+.o_web_client a:focus-visible,
+.o_web_client .btn:focus-visible,
+.o_web_client .o_input:focus-visible,
+.o_web_client input:focus-visible,
+.o_web_client textarea:focus-visible,
+.o_web_client select:focus-visible,
+.o_web_client [tabindex]:focus-visible,
+.o_web_client .o_app:focus-visible,
+.o_web_client .o_kanban_record:focus-visible {
+    outline: 2px solid var(--te-primary);
+    outline-offset: 2px;
+}
+
+.o_web_client .o_input:focus-visible,
+.o_web_client input:focus-visible,
+.o_web_client textarea:focus-visible,
+.o_web_client select:focus-visible,
+.o_web_client .o_select_menu_toggler:focus-visible,
+.o_web_client .o_field_widget [tabindex]:focus-visible {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.o_web_client .btn,
+.o_web_client button,
+.o_web_client .dropdown-item,
+.o_web_client .o-dropdown-item {
+    min-height: 32px;
+}
+
+.o_web_client .text-danger {
+    color: var(--te-danger) !important;
+}
+
+.o_web_client .text-success {
+    color: var(--te-success) !important;
+}
+
+.o_web_client .text-warning {
+    color: var(--te-warning) !important;
+}
+
+.o_web_client .text-info {
+    color: var(--te-info) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .o_web_client *,
+    .o_web_client *::before,
+    .o_web_client *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    .o_home_menu .o_app:hover,
+    .o_kanban_renderer .o_kanban_record:hover {
+        transform: none;
+    }
+}

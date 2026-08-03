@@ -1,0 +1,323 @@
+.te_backend_shell {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1021;
+    width: var(--te-sidebar-width);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--te-border);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 8px 0 32px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(14px);
+    color: var(--te-text);
+    transition: width var(--te-transition);
+}
+
+.te_backend_shell.te_is_collapsed {
+    width: var(--te-sidebar-collapsed-width);
+}
+
+.te_sidebar_brand {
+    min-height: var(--te-header-height);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    border-bottom: 1px solid var(--te-border);
+    text-decoration: none;
+}
+
+.te_logo_mark {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: var(--te-primary);
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.te_logo_text {
+    min-width: 0;
+    color: var(--te-primary);
+    font-size: 1.55rem;
+    font-weight: 850;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.te_logo_text strong {
+    color: var(--te-primary);
+}
+
+.te_sidebar_nav {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 18px 10px;
+}
+
+.te_sidebar_section {
+    margin: 16px 12px 8px;
+    color: var(--te-muted);
+    font-size: 0.72rem;
+    font-weight: 850;
+    text-transform: uppercase;
+}
+
+.te_sidebar_item {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 2px 0;
+    padding: 0 12px;
+    border-radius: 10px;
+    color: #1f2a44;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color var(--te-transition), color var(--te-transition), transform var(--te-transition);
+}
+
+.te_sidebar_item:hover,
+.te_sidebar_item.te_active {
+    background: var(--te-primary-soft);
+    color: var(--te-primary);
+}
+
+.te_sidebar_item.te_active {
+    box-shadow: inset 3px 0 0 var(--te-primary);
+}
+
+.te_sidebar_icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: currentColor;
+}
+
+.te_sidebar_icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.te_sidebar_fallback_icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: rgba(var(--te-primary-rgb), 0.12);
+    color: var(--te-primary);
+    font-size: 0.72rem;
+    font-weight: 850;
+}
+
+.te_sidebar_label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.te_sidebar_footer {
+    padding: 12px;
+    border-top: 1px solid var(--te-border);
+}
+
+.te_sidebar_collapse {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid var(--te-border);
+    border-radius: var(--te-radius-md);
+    background: var(--te-surface);
+    color: #475569;
+    font-weight: 700;
+}
+
+.te_sidebar_collapse:hover {
+    background: var(--te-primary-soft);
+    color: var(--te-primary);
+}
+
+.te_backend_shell.te_is_collapsed .te_logo_text,
+.te_backend_shell.te_is_collapsed .te_sidebar_label,
+.te_backend_shell.te_is_collapsed .te_sidebar_section,
+.te_backend_shell.te_is_collapsed .te_sidebar_collapse_label {
+    display: none;
+}
+
+.te_backend_shell.te_is_collapsed .te_sidebar_brand,
+.te_backend_shell.te_is_collapsed .te_sidebar_item {
+    justify-content: center;
+    padding-inline: 0;
+}
+
+.te_backend_shell.te_is_collapsed .te_sidebar_item.te_active {
+    box-shadow: inset 3px 0 0 var(--te-primary);
+}
+
+.o_app_menu_sidebar {
+    width: #{"min(var(--te-sidebar-width), 88vw)"};
+    background: var(--te-surface);
+    border-right: 1px solid var(--te-border);
+    box-shadow: var(--te-shadow-lg);
+    color: var(--te-text);
+}
+
+.o_app_menu_sidebar .o_sidebar_topbar {
+    min-height: var(--te-header-height);
+    padding-inline: 12px;
+    border-bottom: 1px solid var(--te-border);
+    background: var(--te-surface);
+}
+
+.o_app_menu_sidebar .o_sidebar_topbar .btn-primary {
+    border-radius: var(--te-radius-md);
+}
+
+.o_app_menu_sidebar .o_sidebar_close {
+    border-radius: var(--te-radius-md);
+    color: var(--te-muted) !important;
+}
+
+.o_app_menu_sidebar .o_sidebar_close:hover {
+    background: var(--te-surface-soft) !important;
+    color: var(--te-text) !important;
+}
+
+.o_app_menu_sidebar .o_burger_menu_content {
+    padding: 10px;
+    background: var(--te-surface);
+}
+
+.o_app_menu_sidebar .o_burger_menu_content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.o_app_menu_sidebar .o_burger_menu_content li,
+.o_app_menu_sidebar .o_burger_menu_content .o_app {
+    border-radius: var(--te-radius-md);
+    padding-inline: 12px !important;
+    color: var(--te-text);
+    cursor: pointer;
+    transition: background-color var(--te-transition), color var(--te-transition), transform var(--te-transition);
+}
+
+.o_app_menu_sidebar .o_burger_menu_content li:hover,
+.o_app_menu_sidebar .o_burger_menu_content .o_app:hover {
+    background: var(--te-primary-soft);
+    color: var(--te-primary-hover);
+}
+
+.o_app_menu_sidebar .o_burger_menu_content .o_app.bg-primary-subtle,
+.o_app_menu_sidebar .o_burger_menu_content li.bg-primary-subtle {
+    background: var(--te-primary-soft) !important;
+    color: var(--te-primary);
+}
+
+.o_app_menu_sidebar .o_app_icon {
+    border-radius: var(--te-radius-sm);
+}
+
+.o_main_navbar {
+    --NavBar-brand-color: var(--te-navbar-text-strong);
+    --NavBar-entry-color: var(--te-navbar-text);
+    --NavBar-entry-color--hover: var(--te-primary);
+    --NavBar-entry-color--active: var(--te-primary);
+    --NavBar-entry-backgroundColor: transparent;
+    --NavBar-entry-backgroundColor--hover: rgba(var(--te-primary-rgb), 0.08);
+    --NavBar-entry-backgroundColor--focus: rgba(var(--te-primary-rgb), 0.10);
+    --NavBar-entry-backgroundColor--active: var(--te-primary-soft);
+    --NavBar-entry-borderColor-active: rgba(var(--te-primary-rgb), 0.22);
+    --o-navbar-badge-bg: var(--te-primary);
+    --o-navbar-badge-color: #ffffff;
+
+    border-bottom: 1px solid var(--te-border) !important;
+    background: var(--te-navbar-bg) !important;
+    box-shadow: var(--te-shadow-sm);
+    backdrop-filter: blur(14px);
+    color: var(--te-navbar-text);
+}
+
+.o_main_navbar .o_menu_toggle,
+.o_main_navbar .o_menu_brand,
+.o_main_navbar .o_navbar_breadcrumbs,
+.o_main_navbar .o_navbar_breadcrumbs .btn,
+.o_main_navbar .o_nav_entry,
+.o_main_navbar .dropdown-toggle:not(.o-dropdown-toggle-custo),
+.o_main_navbar .o_menu_systray .btn,
+.o_main_navbar .o_menu_systray button {
+    color: var(--te-navbar-text);
+}
+
+.o_main_navbar .o_menu_brand,
+.o_main_navbar .o_navbar_breadcrumbs .btn {
+    color: var(--te-navbar-text-strong);
+    font-weight: 800;
+}
+
+.o_main_navbar .o_menu_toggle:hover,
+.o_main_navbar .o_menu_brand:hover,
+.o_main_navbar .o_navbar_breadcrumbs .btn:hover,
+.o_main_navbar .o_menu_systray .btn:hover,
+.o_main_navbar .o_menu_systray button:hover,
+.o_main_navbar .o_menu_systray .dropdown-toggle:hover {
+    background: rgba(var(--te-primary-rgb), 0.08);
+    color: var(--te-primary);
+}
+
+.o_main_navbar .o_menu_systray .badge {
+    border: 2px solid var(--te-navbar-bg);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.o_main_navbar .o_menu_sections {
+    gap: 2px;
+}
+
+.o_main_navbar .o_menu_sections .o_nav_entry,
+.o_main_navbar .o_menu_sections .dropdown-toggle {
+    color: var(--te-navbar-text);
+    border-radius: var(--te-radius-sm);
+    transition: background-color var(--te-transition), color var(--te-transition), border-color var(--te-transition);
+}
+
+.o_main_navbar .o_menu_sections .o_nav_entry:hover,
+.o_main_navbar .o_menu_sections .dropdown-toggle:hover {
+    background: rgba(var(--te-primary-rgb), 0.10);
+    color: var(--te-primary);
+}
+
+.o_main_navbar .o_menu_sections .dropdown.show .dropdown-toggle,
+.o_main_navbar .o_menu_sections .dropdown-toggle.show {
+    background: var(--te-primary-soft);
+    color: var(--te-primary);
+    border-color: rgba(var(--te-primary-rgb), 0.22);
+    font-weight: 750;
+}
+
+@media (max-width: 992px) {
+    .te_backend_shell {
+        display: none;
+    }
+}

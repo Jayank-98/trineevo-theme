@@ -1,0 +1,81 @@
+.o_kanban_view,
+.o_kanban_renderer {
+    background: var(--te-bg);
+}
+
+.o_kanban_renderer {
+    gap: 14px;
+    padding: 14px;
+}
+
+.o_kanban_renderer.o_kanban_ungrouped .o_kanban_record {
+    margin: 0;
+}
+
+.o_kanban_renderer .o_kanban_record:not(.o_kanban_ghost):not(.o-kanban-button-new) {
+    border: 1px solid var(--te-border);
+    border-radius: var(--te-radius-lg);
+    background: var(--te-surface);
+    box-shadow: var(--te-shadow-sm);
+    color: var(--te-text);
+    transition: transform var(--te-transition), box-shadow var(--te-transition), border-color var(--te-transition);
+}
+
+.o_kanban_renderer .o_kanban_record:not(.o_kanban_ghost):not(.o-kanban-button-new):hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--te-primary-rgb), 0.28);
+    box-shadow: var(--te-shadow-md);
+}
+
+.o_kanban_renderer .o_kanban_record.o-kanban-button-new {
+    border: 1px dashed var(--te-border-strong);
+    border-radius: var(--te-radius-lg);
+    color: var(--te-primary);
+}
+
+.o_kanban_renderer.o_kanban_grouped {
+    align-items: stretch;
+}
+
+.o_kanban_renderer .o_kanban_group {
+    border: 1px solid var(--te-border);
+    border-radius: var(--te-radius-lg);
+    background: var(--te-surface-soft);
+    box-shadow: var(--te-shadow-sm);
+}
+
+.o_kanban_renderer .o_kanban_group .o_kanban_header {
+    border-bottom: 1px solid var(--te-border);
+    background: var(--te-surface);
+}
+
+.o_kanban_renderer .o_kanban_header_title {
+    color: var(--te-text);
+    font-weight: 800;
+}
+
+.o_kanban_renderer .o_kanban_counter {
+    color: var(--te-muted);
+}
+
+.o_kanban_renderer .o_kanban_quick_create {
+    border-radius: var(--te-radius-lg);
+    background: var(--te-surface);
+    box-shadow: var(--te-shadow-md);
+}
+
+.o_kanban_renderer .badge,
+.o_kanban_renderer .o_tag,
+.o_kanban_renderer .o_field_many2many_tags .badge {
+    border-radius: 999px;
+}
+
+.o_kanban_renderer .o_kanban_group.o_column_folded {
+    border-color: var(--te-border);
+}
+
+.o_kanban_renderer .o_view_nocontent,
+.o_kanban_renderer .o_kanban_stages_nocontent {
+    color: var(--te-muted);
+}
+

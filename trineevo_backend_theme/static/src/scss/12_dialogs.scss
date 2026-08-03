@@ -1,0 +1,54 @@
+.modal.o_technical_modal .modal-content,
+.o_dialog .modal-content,
+.modal .modal-content {
+    border: 1px solid var(--te-border);
+    border-radius: var(--te-radius-xl);
+    background: var(--te-surface);
+    box-shadow: var(--te-shadow-lg);
+    color: var(--te-text);
+    overflow: hidden;
+}
+
+.modal.o_technical_modal .modal-header,
+.o_dialog .modal-header,
+.modal .modal-header {
+    border-bottom: 1px solid var(--te-border);
+    background: var(--te-surface);
+    padding: 16px 18px;
+}
+
+.modal.o_technical_modal .modal-title,
+.o_dialog .modal-title,
+.modal .modal-title {
+    color: var(--te-text);
+    font-weight: 800;
+}
+
+.modal.o_technical_modal .modal-body,
+.o_dialog .modal-body,
+.modal .modal-body {
+    background: var(--te-surface);
+}
+
+.modal.o_technical_modal .modal-footer,
+.o_dialog .modal-footer,
+.modal .modal-footer {
+    border-top: 1px solid var(--te-border);
+    background: var(--te-surface-soft);
+    padding: 14px 18px;
+}
+
+.modal.o_technical_modal .o_form_view .o_form_sheet {
+    border-radius: var(--te-radius-lg);
+    box-shadow: none;
+}
+
+.modal-backdrop.show {
+    opacity: 0.42;
+}
+
+.o_dialog .btn-close,
+.modal .btn-close {
+    border-radius: var(--te-radius-sm);
+}
+

@@ -1,0 +1,98 @@
+.o_web_client .btn {
+    border-radius: var(--te-radius-sm);
+    transition: background-color var(--te-transition), border-color var(--te-transition), color var(--te-transition), box-shadow var(--te-transition), transform var(--te-transition);
+}
+
+.o_web_client .btn-primary,
+.o_web_client .btn.btn-primary {
+    border-color: var(--te-primary);
+    background: var(--te-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(var(--te-primary-rgb), 0.18);
+}
+
+.o_web_client .btn-primary:hover,
+.o_web_client .btn.btn-primary:hover,
+.o_web_client .btn-primary:focus,
+.o_web_client .btn.btn-primary:focus {
+    border-color: var(--te-primary-hover);
+    background: var(--te-primary-hover);
+    color: #ffffff;
+}
+
+.o_web_client .btn-outline-primary {
+    border-color: rgba(var(--te-primary-rgb), 0.44);
+    color: var(--te-primary);
+}
+
+.o_web_client .btn-outline-primary:hover,
+.o_web_client .btn-outline-primary:focus {
+    border-color: var(--te-primary);
+    background: var(--te-primary);
+    color: #ffffff;
+}
+
+.o_web_client .btn-secondary,
+.o_web_client .btn-light,
+.o_web_client .btn-outline-secondary {
+    border-color: var(--te-border);
+    background: var(--te-surface);
+    color: var(--te-text);
+}
+
+.o_web_client .btn-secondary:hover,
+.o_web_client .btn-light:hover,
+.o_web_client .btn-outline-secondary:hover,
+.o_web_client .btn-secondary:focus,
+.o_web_client .btn-light:focus,
+.o_web_client .btn-outline-secondary:focus {
+    border-color: rgba(var(--te-primary-rgb), 0.28);
+    background: var(--te-primary-soft);
+    color: var(--te-primary);
+}
+
+.o_web_client .btn-link {
+    color: var(--te-primary);
+}
+
+.o_web_client .btn-link:hover,
+.o_web_client .btn-link:focus {
+    color: var(--te-primary-hover);
+}
+
+.o_web_client .btn-danger {
+    border-color: var(--te-danger);
+}
+
+.o_web_client .btn-success {
+    border-color: var(--te-success);
+}
+
+.o_web_client .btn-warning {
+    border-color: var(--te-warning);
+}
+
+.o_web_client .o_icon_button,
+.o_web_client .btn.fa,
+.o_web_client .btn.oi,
+.o_web_client button.o_icon_button {
+    border-radius: var(--te-radius-sm);
+}
+
+.o_web_client .o_dropdown_button,
+.o_web_client .dropdown-toggle,
+.o_web_client .o-dropdown-caret {
+    border-radius: var(--te-radius-sm);
+}
+
+.o_web_client .o_statusbar_buttons .btn,
+.o_web_client .o_form_statusbar .btn {
+    min-height: 34px;
+}
+
+.o_web_client .btn:disabled,
+.o_web_client .btn.disabled {
+    box-shadow: none;
+    cursor: not-allowed;
+}
+

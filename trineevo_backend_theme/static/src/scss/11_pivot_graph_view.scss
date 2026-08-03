@@ -1,0 +1,82 @@
+.o_pivot_view,
+.o_graph_view {
+    background: var(--te-bg);
+}
+
+.o_pivot_view .o_pivot,
+.o_graph_view .o_graph_renderer {
+    border: 1px solid var(--te-border) !important;
+    border-radius: var(--te-radius-lg);
+    background: var(--te-surface);
+    box-shadow: var(--te-shadow-sm);
+    overflow: auto;
+}
+
+.o_pivot_buttons,
+.o_graph_renderer > .d-flex.d-print-none {
+    flex-wrap: wrap;
+}
+
+.o_pivot_buttons .btn,
+.o_graph_renderer .o_graph_button {
+    min-width: 36px;
+    border-radius: var(--te-radius-sm);
+}
+
+.o_graph_renderer .o_graph_button.active,
+.o_graph_renderer .o_graph_button:active,
+.o_pivot_buttons .btn.active,
+.o_pivot_buttons .btn:active {
+    border-color: var(--te-primary);
+    background: var(--te-primary);
+    color: #ffffff;
+}
+
+.o_pivot table {
+    border-color: var(--te-border);
+}
+
+.o_pivot table th,
+.o_pivot table td {
+    padding: 9px 12px;
+    border-color: var(--te-border);
+}
+
+.o_pivot table .o_pivot_measure_row,
+.o_pivot table .o_pivot_origin_row,
+.o_pivot table .o_pivot_header_cell_closed,
+.o_pivot table .o_pivot_header_cell_opened {
+    background: var(--te-surface-soft);
+    color: var(--te-text);
+    font-weight: 700;
+}
+
+.o_pivot table .o_pivot_cell_value {
+    color: var(--te-text);
+}
+
+.o_pivot table .o_pivot_cell_value.o_cell_hover,
+.o_pivot table .o_pivot_cell_value:hover {
+    background: var(--te-primary-soft);
+    color: var(--te-primary);
+}
+
+.o_graph_renderer {
+    color: var(--te-text);
+}
+
+.o_graph_renderer .o_graph_canvas_container {
+    min-height: 320px;
+    border-top: 1px solid var(--te-border);
+    background: var(--te-surface);
+}
+
+.o_graph_renderer .o_graph_alert {
+    border-radius: var(--te-radius-md);
+}
+
+.o_graph_custom_tooltip {
+    border-radius: var(--te-radius-md);
+    box-shadow: var(--te-shadow-md);
+}
+

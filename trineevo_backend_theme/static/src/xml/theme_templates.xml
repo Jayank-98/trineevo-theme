@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="trineevo_backend_theme.Placeholder"/>
+
+    <t t-name="trineevo_backend_theme.HomeAction">
+        <div t-attf-class="{{ props.className || '' }} te_home_action o_home_menu_background">
+            <main class="te_home_canvas">
+                <header class="te_home_header">
+                    <div>
+                        <span class="te_home_eyebrow">Odoo 19 Community</span>
+                        <h1 class="te_home_title">Apps</h1>
+                        <p class="te_home_subtitle">Choose an app to get started</p>
+                    </div>
+                    <div class="te_home_counter" aria-label="Installed apps">
+                        <div class="te_home_counter_value" t-esc="apps.length"/>
+                        <div class="te_home_counter_label">Apps</div>
+                    </div>
+                </header>
+
+                <section class="te_home_tools" aria-label="App launcher tools">
+                    <label class="te_home_search">
+                        <i class="oi oi-search" aria-hidden="true"/>
+                        <input type="search"
+                            t-att-value="state.query"
+                            t-on-input="onSearchInput"
+                            placeholder="Search menus and apps..."
+                            aria-label="Search menus and apps"/>
+                        <span t-if="resultSummary" class="te_home_result_summary" t-esc="resultSummary"/>
+                    </label>
+                    <button type="button" class="te_home_select" t-on-click="clearFilters">
+                        <i class="fa fa-filter" aria-hidden="true"/>
+                        <span t-esc="activeCategoryLabel"/>
+                        <i class="fa fa-angle-down ms-auto" aria-hidden="true"/>
+                    </button>
+                </section>
+
+                <section class="te_home_categories" aria-label="App categories">
+                    <button t-foreach="categories"
+                        t-as="category"
+                        t-key="category.id"
+                        type="button"
+                        class="te_home_category"
+                        t-att-class="{ te_active: state.category === category.id }"
+                        t-on-click="() => this.setCategory(category.id)">
+                        <t t-esc="category.label"/>
+                    </button>
+                </section>
+
+                <section class="te_home_menu o_home_menu" aria-label="Apps and menus">
+                    <div t-if="displayedCards.length" class="te_home_apps o_apps">
+                        <a t-foreach="displayedCards"
+                            t-as="card"
+                            t-key="`${card.type}-${card.id}`"
+                            class="te_app_card o_app o_menuitem"
+                            t-att-class="{ te_menu_result_card: isMenuCard(card) }"
+                            t-att-href="getCardHref(card)"
+                            t-att-data-menu-xmlid="card.xmlid"
+                            t-att-data-section="card.id"
+                            t-on-click="(ev) => this.onCardClick(card, ev)">
+                            <span class="te_app_icon_wrap">
+                                <img t-if="getCardIconData(card)" class="o_app_icon" t-att-src="getCardIconData(card)" t-att-alt="getCardName(card)"/>
+                                <span t-else="" class="te_app_initials" t-esc="getCardInitials(card)"/>
+                            </span>
+                            <span class="te_app_name" t-esc="getCardName(card)"/>
+                            <span t-if="getCardMeta(card)" class="te_app_meta" t-esc="getCardMeta(card)"/>
+                        </a>
+                    </div>
+                    <div t-else="" class="te_home_empty" t-esc="emptyMessage"/>
+                </section>
+            </main>
+        </div>
+    </t>
+
+    <t t-name="trineevo_backend_theme.Sidebar">
+        <aside t-if="!state.fullscreen" class="te_backend_shell" t-att-class="{ te_is_collapsed: state.collapsed }">
+            <a class="te_sidebar_brand" href="/odoo" t-on-click="onHomeClick" t-att-title="activeCompanyName">
+                <span class="te_logo_mark" t-esc="companyBrandInitial"/>
+                <span class="te_logo_text" t-esc="companyBrandName"/>
+            </a>
+
+            <nav class="te_sidebar_nav" aria-label="Main apps">
+                <a class="te_sidebar_item"
+                    href="/odoo"
+                    t-att-class="{ te_active: state.homeActive }"
+                    t-on-click="onHomeClick"
+                    title="Home">
+                    <span class="te_sidebar_icon"><i class="fa fa-home" aria-hidden="true"/></span>
+                    <span class="te_sidebar_label">Home</span>
+                </a>
+
+                <div class="te_sidebar_section">Apps</div>
+                <a t-foreach="apps"
+                    t-as="app"
+                    t-key="app.id"
+                    class="te_sidebar_item"
+                    t-att-class="{ te_active: isActiveApp(app) }"
+                    t-att-href="getAppHref(app)"
+                    t-att-title="app.name"
+                    t-on-click="(ev) => this.onAppClick(app, ev)">
+                    <span class="te_sidebar_icon">
+                        <img t-if="app.webIconData" t-att-src="app.webIconData" t-att-alt="app.name"/>
+                        <span t-else="" class="te_sidebar_fallback_icon" t-esc="getAppInitials(app)"/>
+                    </span>
+                    <span class="te_sidebar_label" t-esc="app.name"/>
+                </a>
+            </nav>
+
+            <div class="te_sidebar_footer">
+                <button type="button" class="te_sidebar_collapse" t-on-click="toggleCollapsed">
+                    <i t-att-class="state.collapsed ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'" aria-hidden="true"/>
+                    <span class="te_sidebar_collapse_label">Collapse</span>
+                </button>
+            </div>
+        </aside>
+    </t>
+</templates>
